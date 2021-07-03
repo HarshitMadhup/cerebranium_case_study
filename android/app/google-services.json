@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "194270006982",
+    "project_id": "cerebranium-case-study",
+    "storage_bucket": "cerebranium-case-study.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194270006982:android:8b2883535d91e1fb1711c7",
+        "android_client_info": {
+          "package_name": "com.cerebranium.casestudy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "194270006982-hqgo7u0c99dan5vl0pqc1ior9da6qak0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFCjiEOXRiNTqM8dEpHHRwqcaamr_EAXg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "194270006982-hqgo7u0c99dan5vl0pqc1ior9da6qak0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
