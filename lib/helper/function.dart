@@ -37,3 +37,4 @@ class AddDetails {
       print(error.toString());
     }
   }
+}
