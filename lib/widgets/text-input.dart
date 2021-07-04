@@ -9,13 +9,15 @@ class TextInput extends StatelessWidget {
       this.hint,
       this.inputType,
       this.inputAction,
-      this.controller});
+      this.controller,
+      this.validation});
 
   final IconData icon;
   final String hint;
   final TextInputType inputType;
   final TextInputAction inputAction;
   final TextEditingController controller;
+  final Function(String) validation;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,8 @@ class TextInput extends StatelessWidget {
           color: Colors.pink[700].withOpacity(0.3),
           borderRadius: BorderRadius.circular(16),
         ),
-        child: TextField(
+        child: TextFormField(
+          validator: validation,
           controller: controller,
           decoration: InputDecoration(
             contentPadding: const EdgeInsets.symmetric(vertical: 10),

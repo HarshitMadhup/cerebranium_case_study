@@ -1,4 +1,4 @@
-import 'package:cerebranium/helper/function.dart';
+import 'package:cerebranium/helper/storeDetails.dart';
 
 import '../widgets/text-input.dart';
 import 'package:flutter/material.dart';
@@ -52,8 +52,6 @@ class Form_ScreenState extends State<Form_Screen> {
                 height: 70,
               ),
               Container(
-                width: 50,
-                // : double.infinity,
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -61,11 +59,21 @@ class Form_ScreenState extends State<Form_Screen> {
                     TextInput(
                       controller: nameController,
                       icon: FontAwesomeIcons.user,
+                      validation: (value) {
+                        return value.isEmpty ? "Field cannot be empty" : null;
+                      },
                       hint: 'Name',
                       inputType: TextInputType.text,
                       inputAction: TextInputAction.next,
                     ),
                     TextInput(
+                      validation: (value) {
+                        return RegExp(
+                                    r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
+                                .hasMatch(value)
+                            ? null
+                            : "Invalid Email";
+                      },
                       controller: emailController,
                       icon: Icons.mail,
                       hint: 'Enter Email',
@@ -73,6 +81,11 @@ class Form_ScreenState extends State<Form_Screen> {
                       inputAction: TextInputAction.next,
                     ),
                     TextInput(
+                      validation: (value) {
+                        return value.isEmpty && value.length < 9
+                            ? "Enter valid account number"
+                            : null;
+                      },
                       controller: accountController,
                       icon: Icons.menu,
                       hint: 'Enter account number',
@@ -80,6 +93,9 @@ class Form_ScreenState extends State<Form_Screen> {
                       inputAction: TextInputAction.next,
                     ),
                     TextInput(
+                      validation: (value) {
+                        return value.isEmpty ? "Enter Phone Number" : null;
+                      },
                       controller: contactController,
                       icon: FontAwesomeIcons.phone,
                       hint: 'Enter Phone Number',
@@ -87,6 +103,11 @@ class Form_ScreenState extends State<Form_Screen> {
                       inputAction: TextInputAction.next,
                     ),
                     TextInput(
+                      validation: (value) {
+                        return value.length < 11
+                            ? "Enter valid IFSC code"
+                            : null;
+                      },
                       icon: Icons.menu,
                       hint: 'Enter IFSC code',
                       controller: ifsccontroller,
