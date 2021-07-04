@@ -1,4 +1,4 @@
-import 'package:cerebranium/helper/success.dart';
+import 'package:cerebranium/helper/function.dart';
 
 import '../widgets/text-input.dart';
 import 'package:flutter/material.dart';
@@ -52,6 +52,8 @@ class Form_ScreenState extends State<Form_Screen> {
                 height: 70,
               ),
               Container(
+                width: 50,
+                // : double.infinity,
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -65,7 +67,7 @@ class Form_ScreenState extends State<Form_Screen> {
                     ),
                     TextInput(
                       controller: emailController,
-                      icon: FontAwesomeIcons.mailchimp,
+                      icon: Icons.mail,
                       hint: 'Enter Email',
                       inputType: TextInputType.emailAddress,
                       inputAction: TextInputAction.next,

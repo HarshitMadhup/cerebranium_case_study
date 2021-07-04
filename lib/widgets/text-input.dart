@@ -37,7 +37,7 @@ class TextInput extends StatelessWidget {
               child: Icon(
                 icon,
                 color: Colors.white,
-                size: 30,
+                size: 25,
               ),
             ),
             hintStyle: kBodyText,
