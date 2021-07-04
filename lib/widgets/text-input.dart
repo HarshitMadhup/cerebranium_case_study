@@ -17,7 +17,7 @@ class TextInput extends StatelessWidget {
   final TextInputType inputType;
   final TextInputAction inputAction;
   final TextEditingController controller;
-  final Function(String) validation;
+  final String Function(String) validation;
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +25,18 @@ class TextInput extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.pink[700].withOpacity(0.3),
+          color: Colors.pink[500].withOpacity(0.3),
           borderRadius: BorderRadius.circular(16),
         ),
         child: TextFormField(
+          // autovalidateMode: AutovalidateMode.disabled,
           validator: validation,
           controller: controller,
           decoration: InputDecoration(
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16),
+                borderSide: BorderSide(color: Colors.cyan, width: 1.0)),
+            errorStyle: GoogleFonts.lato(color: Colors.red, fontSize: 10),
             contentPadding: const EdgeInsets.symmetric(vertical: 10),
             border: InputBorder.none,
             hintText: hint,

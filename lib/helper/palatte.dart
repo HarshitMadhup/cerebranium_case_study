@@ -9,4 +9,4 @@ const TextStyle kHeading = TextStyle(
 );
 
 TextStyle kBodyText = GoogleFonts.lato(
-    fontSize: 20, color: Colors.white70, fontWeight: FontWeight.w300);
+    fontSize: 20, color: Colors.white, fontWeight: FontWeight.w300);
