@@ -1,16 +1,5 @@
-# cerebranium
+Screenshots
 
-A new Flutter project.
+![Apple iPhone Xs Max Presentation (20)](https://user-images.githubusercontent.com/72512986/124395193-5e8e2d00-dd20-11eb-896d-60ab388943d1.png)
+![Apple iPhone Xs Max Presentation (27)](https://user-images.githubusercontent.com/72512986/124395194-6221b400-dd20-11eb-9639-bcf6054451c3.png)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
