@@ -1,4 +1,5 @@
 import 'package:cerebranium/helper/storeDetails.dart';
+import 'package:cerebranium/helper/validator.dart';
 
 import '../widgets/text-input.dart';
 import 'package:flutter/material.dart';
@@ -60,7 +61,7 @@ class Form_ScreenState extends State<Form_Screen> {
                       controller: nameController,
                       icon: FontAwesomeIcons.user,
                       validation: (value) {
-                        return value.isEmpty ? "Field cannot be empty" : null;
+                        return Validator.namevalidate(value);
                       },
                       hint: 'Name',
                       inputType: TextInputType.text,
@@ -68,11 +69,7 @@ class Form_ScreenState extends State<Form_Screen> {
                     ),
                     TextInput(
                       validation: (value) {
-                        return RegExp(
-                                    r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
-                                .hasMatch(value)
-                            ? null
-                            : "Invalid Email";
+                        return Validator.emailvalidate(value);
                       },
                       controller: emailController,
                       icon: Icons.mail,
@@ -82,9 +79,7 @@ class Form_ScreenState extends State<Form_Screen> {
                     ),
                     TextInput(
                       validation: (value) {
-                        return value.isEmpty && value.length < 9
-                            ? "Enter valid account number"
-                            : null;
+                        return Validator.accountvalidate(value);
                       },
                       controller: accountController,
                       icon: Icons.menu,
@@ -94,7 +89,7 @@ class Form_ScreenState extends State<Form_Screen> {
                     ),
                     TextInput(
                       validation: (value) {
-                        return value.isEmpty ? "Enter Phone Number" : null;
+                        return Validator.phonenumbervalidate(value);
                       },
                       controller: contactController,
                       icon: FontAwesomeIcons.phone,
@@ -104,9 +99,7 @@ class Form_ScreenState extends State<Form_Screen> {
                     ),
                     TextInput(
                       validation: (value) {
-                        return value.length < 11
-                            ? "Enter valid IFSC code"
-                            : null;
+                        return Validator.ifscvalidate(value);
                       },
                       icon: Icons.menu,
                       hint: 'Enter IFSC code',

@@ -1,30 +1,28 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility that Flutter provides. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
+import 'package:cerebranium/helper/validator.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:cerebranium/main.dart';
-
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+  test('Empty name returns error string', () {
+    final result = Validator.namevalidate('');
+    expect(result, 'Field cannot be empty');
+  });
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  test('Invalid email returns error', () {
+    final result = Validator.emailvalidate('email');
+    expect(result, 'Invalid Email');
+  });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+  test('Account number length < 9 is invalid', () {
+    final result = Validator.accountvalidate('123');
+    expect(result, 'Enter valid account number');
+  });
+  test('Phone number cannot be empty', () {
+    final result = Validator.phonenumbervalidate('');
+    expect(result, 'Enter Phone Number');
+  });
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+  test('IFSC!=11 is invalid', () {
+    final result = Validator.ifscvalidate('123');
+    expect(result, 'Invalid IFSC code');
   });
 }
